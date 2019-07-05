@@ -1,0 +1,36 @@
+#article-search {
+	text-align: center;
+	width: 100%;
+}
+
+#search-bar {
+	width: 90%;
+	height: 40px;
+	margin: 50px auto;
+}
+
+.container {
+	width: 90%;
+	margin: 50px auto;
+  column-count: 4;
+	column-gap: 60px;
+}
+
+.article-card {
+  background-color: #eee;
+	display: inline-block;
+	margin-bottom: 35px;
+	padding: 20px;
+	width: 90%;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.article-title {
+	font-size: 30px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid black;
+}
+
+.article-desc {
+	font-size: 20px;
+}
