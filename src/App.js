@@ -10,7 +10,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/" exact component={ChannelList}/>
-          <Route path="/news/:id" render={props => <ChannelNews {...props} />}/>
+          <Route path="/news/:id" component={ChannelNews}/>
         </Switch>
       </div>
     </Router>
