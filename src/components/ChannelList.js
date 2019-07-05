@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 
-export default class ChannelList extends React.Component {
+export default class ChannelList extends Component {
 
     constructor() {
         super();
         this.state = {
             loading: true,
-            search: '',
+            // search: '',
             channels: null
         };
     }
@@ -67,12 +68,18 @@ export default class ChannelList extends React.Component {
             channelList = <div>Loading GIF</div>;
         } else {
             channelList = this.state.channels.map(item => {
-                return <div key={item.id}><div className="channel-name">{item.name}</div><div className="channel-desc">{item.description}</div></div>;
+                return (<Link to={`/news/${item.id}`} key={item.id}>
+                            <div className="channel">
+                                <div className="channel-name">{item.name}</div>
+                                <div className="channel-desc">{item.description}</div>
+                            </div>
+                        </Link>);
             })
         }
 
         return (
             <div>
+                <div>News App</div>
                 {/* <div>
                     <input type='text' name='channelSearch' placeholder='Times Now' maxLength='30'></input>
                     <div>Search Icon</div> 
