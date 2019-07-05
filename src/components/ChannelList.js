@@ -52,7 +52,7 @@ export default class ChannelList extends React.Component {
         };
 
         const channels = data.sources.map(source => {
-            return {name: source.name, id: source.id};
+            return {name: source.name, id: source.id, description: source.description};
         })
         this.setState({
             loading: false,
@@ -67,16 +67,16 @@ export default class ChannelList extends React.Component {
             channelList = <div>Loading GIF</div>;
         } else {
             channelList = this.state.channels.map(item => {
-                return <div key={item.id}>{item.name}</div>;
+                return <div key={item.id}><div className="channel-name">{item.name}</div><div className="channel-desc">{item.description}</div></div>;
             })
         }
 
         return (
             <div>
-                <div>
+                {/* <div>
                     <input type='text' name='channelSearch' placeholder='Times Now' maxLength='30'></input>
-                    {/* <div>Search Icon</div>  */}
-                </div>
+                    <div>Search Icon</div> 
+                </div> */}
                 <div>
                     {channelList}
                 </div>
