@@ -79,7 +79,7 @@ export default class ChannelNews extends Component {
             articles = <div>Loading...</div>
         } else {
             articles = this.state.articles.map((article, i) => {
-                return (<div key={i}>
+                return (<div key={i} className="article-card">
                             <div>{article.title}</div>
                             <div>{article.description}</div>
                         </div>);
@@ -90,7 +90,7 @@ export default class ChannelNews extends Component {
             <div>
                 <div>
                     <input type='text' name='channelSearch' placeholder='market' maxLength='30'></input>
-                    <div>Search Icon</div> 
+                    {/* <div>Search Icon</div>  */}
                 </div>
                 {articles}
             </div>

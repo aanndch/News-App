@@ -8,8 +8,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Route path="/" exact component={ChannelList}/>
-        <Route path="/news/:id" render={props => <ChannelNews {...props} />}/>
+        <Switch>
+          <Route path="/" exact component={ChannelList}/>
+          <Route path="/news/:id" render={props => <ChannelNews {...props} />}/>
+        </Switch>
       </div>
     </Router>
   );
