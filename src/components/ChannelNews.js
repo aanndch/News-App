@@ -7,7 +7,7 @@ export default class ChannelNews extends Component {
         this.state = {
             loading: true,
             search: '',
-
+            articles: []
         }
     }
 
@@ -68,17 +68,29 @@ export default class ChannelNews extends Component {
             return {title: article.title, description: article.description };
         })
 
+        console.log(articles);
+
         this.setState({loading: false, articles: articles});
 
+    }
+
+    handleSearch = (event) => {
+        this.setState({ search: event.target.value});
     }
 
     render() {
 
         let articles = [];
+        articles = this.state.articles.filter(article => {
+            return article.title.toLowerCase().includes(this.state.search);
+        })
+
+        console.log(articles);
+
         if (this.state.loading) {
-            articles = <div>Loading...</div>
+            articles = <div>Loading GIF</div>
         } else {
-            articles = this.state.articles.map((article, i) => {
+            articles = articles.map((article, i) => {
                 return (<div key={i} className="article-card">
                             <div>{article.title}</div>
                             <div>{article.description}</div>
@@ -89,7 +101,7 @@ export default class ChannelNews extends Component {
         return (
             <div>
                 <div>
-                    <input type='text' name='channelSearch' placeholder='market' maxLength='30'></input>
+                    <input type='text' name='articleSearch' onChange={this.handleSearch} placeholder='market' maxLength='30'/>
                     {/* <div>Search Icon</div>  */}
                 </div>
                 {articles}
