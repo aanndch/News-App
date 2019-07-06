@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import ArticleCard from './ArticleCard';
 
 export default class ChannelNews extends Component {
 
@@ -7,7 +8,8 @@ export default class ChannelNews extends Component {
         this.state = {
             loading: true,
             search: '',
-            articles: []
+            articles: [],
+            show: false
         }
     }
 
@@ -195,7 +197,7 @@ export default class ChannelNews extends Component {
             };
 
         const articles = data.articles.map(article => {
-            return {title: article.title, description: article.description };
+            return {title: article.title, description: article.description, url: article.url };
         })
 
         this.setState({
@@ -214,6 +216,14 @@ export default class ChannelNews extends Component {
         document.getElementById("search-bar").value = '';
     }
 
+    handleShow = () => {
+        this.setState({ show: true });
+    };
+  
+    handleHide = () => {
+        this.setState({ show: false });
+    };
+
     render() {
 
         let articles = [];
@@ -222,10 +232,7 @@ export default class ChannelNews extends Component {
         })
 
         articles = articles.map((article, i) => {
-            return (<div key={i} className="article-card">
-                        <div className="article-title">{article.title}</div>
-                        <div className="article-desc">{article.description}</div>
-                    </div>);
+            return <ArticleCard title={article.title} desc={article.description} url={article.url} key={i}/>
         })
 
         return (
@@ -235,7 +242,7 @@ export default class ChannelNews extends Component {
                     <input type='text' name='articleSearch' onChange={this.handleSearch} placeholder="Search" maxLength='30' id="search-bar"/>
                     <i className="fa fa-times-circle" onClick={() => this.clearSearch()}></i>
                 </div>
-                <div className="container">
+                <div className="contentContainer">
                     {this.state.loading ? <div id="center-loader"><div className="spinner"><div className="double-bounce1"></div><div className="double-bounce2"></div></div></div> : articles}
                 </div>
             </Fragment>
