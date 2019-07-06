@@ -8,8 +8,7 @@ export default class ChannelNews extends Component {
         this.state = {
             loading: true,
             search: '',
-            articles: [],
-            show: false
+            articles: []
         }
     }
 
@@ -197,7 +196,7 @@ export default class ChannelNews extends Component {
             };
 
         const articles = data.articles.map(article => {
-            return {title: article.title, description: article.description, url: article.url };
+            return {title: article.title, description: article.description, url: article.url, content: article.content };
         })
 
         this.setState({
@@ -216,14 +215,6 @@ export default class ChannelNews extends Component {
         document.getElementById("search-bar").value = '';
     }
 
-    handleShow = () => {
-        this.setState({ show: true });
-    };
-  
-    handleHide = () => {
-        this.setState({ show: false });
-    };
-
     render() {
 
         let articles = [];
@@ -232,7 +223,7 @@ export default class ChannelNews extends Component {
         })
 
         articles = articles.map((article, i) => {
-            return <ArticleCard title={article.title} desc={article.description} url={article.url} key={i}/>
+            return <ArticleCard title={article.title} desc={article.description} url={article.url} content={article.content} key={i}/>
         })
 
         return (

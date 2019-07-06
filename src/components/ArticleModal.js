@@ -1,31 +1,35 @@
 import React, { Component, Fragment } from 'react';
-import { Modal, Button } from 'react-bootsrap';
+import { Modal, Button } from 'react-bootstrap';
 
 export default class ArticleModal extends Component {
+
+    openUrl = () => {
+        window.location = this.props.url;
+    }
+
     render() {
         return (
             <Fragment>
                 <Modal
-                    show={this.state.show}
-                    onHide={this.handleHide}
-                    dialogClassName="modal-90w"
+                    show={true}
+                    onHide={this.props.handleHide}
                 >
                     <Modal.Header closeButton>
                         <Modal.Title>
-                        Custom Modal Styling
+                        {this.props.title}
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <p>
-                        Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae
-                        unde commodi aspernatur enim, consectetur. Cumque deleniti
-                        temporibus ipsam atque a dolores quisquam quisquam adipisci
-                        possimus laboriosam. Quibusdam facilis doloribus debitis! Sit
-                        quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem!
-                        Mollitia reiciendis porro quo magni incidunt dolore amet atque
-                        facilis ipsum deleniti rem!
-                        </p>
+                        {this.props.content}
                     </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={this.props.handleHide}>
+                        CLOSE
+                        </Button>
+                        <Button id="redirect-url-button" onClick={this.openUrl}>
+                        MAIN ARTICLE
+                        </Button>
+                    </Modal.Footer>
                 </Modal>
             </Fragment>
         )

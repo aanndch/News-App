@@ -267,6 +267,6 @@ button.learn-more:hover {
   letter-spacing: 0.125rem;
 }
 
-#modal {
-	background: white;
+#redirect-url-button {
+	background-color: #000b29;
 }
