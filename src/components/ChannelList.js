@@ -69,6 +69,11 @@ export default class ChannelList extends Component {
         this.setState({ search: event.target.value});
     }
 
+    clearSearch = () => {
+        this.setState({ search: '' });
+        document.getElementById("channel-search-bar").value = '';
+    }
+
     render() {
 
         
@@ -98,8 +103,9 @@ export default class ChannelList extends Component {
         return (
             <Fragment>
                 <div id="heading">Daily News</div>
-                <div id="article-search">
-                    <input type='text' name='articleSearch' onChange={this.handleSearch} placeholder="Search" maxLength='30' id="channel-search-bar"/>
+                <div id="channel-search">
+                    <input type='text' name='channelSearch' onChange={this.handleSearch} placeholder="Search" maxLength='30' id="channel-search-bar"/>
+                    <i class="fa fa-times-circle" onClick={() => this.clearSearch()}></i>
                 </div>
                 <ul id="channel-list">
                     {channelList}

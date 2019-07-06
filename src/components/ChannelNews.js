@@ -209,6 +209,11 @@ export default class ChannelNews extends Component {
         this.setState({ search: event.target.value});
     }
 
+    clearSearch = () => {
+        this.setState({ search: '' });
+        document.getElementById("search-bar").value = '';
+    }
+
     render() {
 
         let articles = [];
@@ -231,6 +236,7 @@ export default class ChannelNews extends Component {
             <Fragment>
                 <div id="article-search">
                     <input type='text' name='articleSearch' onChange={this.handleSearch} placeholder="Search" maxLength='30' id="search-bar"/>
+                    <i class="fa fa-times-circle" onClick={() => this.clearSearch()}></i>
                     {/* <div>Search Icon</div>  */}
                 </div>
                 <div className="container">
