@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+import React, { Component, Fragment } from 'react';
+import {Link} from 'react-router-dom';
+import 'font-awesome/css/font-awesome.min.css';
 
 export default class ChannelList extends Component {
 
@@ -69,25 +70,28 @@ export default class ChannelList extends Component {
         } else {
             channelList = this.state.channels.map(item => {
                 return (<Link to={`/news/${item.id}`} key={item.id}>
-                            <div className="channel">
-                                <div className="channel-name">{item.name}</div>
+                            <li className="channel">
+                                <div className="channel-top">
+                                    <i className="fa fa-align-justify"></i>
+                                    <div className="channel-name">{item.name}</div>
+                                </div>
                                 <div className="channel-desc">{item.description}</div>
-                            </div>
+                            </li>
                         </Link>);
             })
         }
 
         return (
-            <div>
-                <div>News App</div>
+            <Fragment>
+                <div id="heading">Daily News</div>
                 {/* <div>
                     <input type='text' name='channelSearch' placeholder='Times Now' maxLength='30'></input>
                     <div>Search Icon</div> 
                 </div> */}
-                <div>
+                <ul id="channel-list">
                     {channelList}
-                </div>
-            </div>
+                </ul>
+            </Fragment>
         )
     }
 
