@@ -108,7 +108,7 @@ export default class ChannelList extends Component {
                     <i class="fa fa-times-circle" onClick={() => this.clearSearch()}></i>
                 </div>
                 <ul id="channel-list">
-                    {channelList}
+                    {this.state.loading ? <div id="center-loader"><div className="spinner"><div className="double-bounce1"></div><div className="double-bounce2"></div></div></div> : channelList}
                 </ul>
             </Fragment>
         )

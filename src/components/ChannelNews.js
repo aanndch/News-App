@@ -221,26 +221,22 @@ export default class ChannelNews extends Component {
             return article.title.toLowerCase().includes(this.state.search.toLowerCase());
         })
 
-        if (this.state.loading) {
-            articles = <div>Loading GIF</div>
-        } else {
-            articles = articles.map((article, i) => {
-                return (<div key={i} className="article-card">
-                            <div className="article-title">{article.title}</div>
-                            <div className="article-desc">{article.description}</div>
-                        </div>);
-            })
-        }
+        articles = articles.map((article, i) => {
+            return (<div key={i} className="article-card">
+                        <div className="article-title">{article.title}</div>
+                        <div className="article-desc">{article.description}</div>
+                    </div>);
+        })
 
         return (
             <Fragment>
+                <div id="heading">Articles</div>
                 <div id="article-search">
                     <input type='text' name='articleSearch' onChange={this.handleSearch} placeholder="Search" maxLength='30' id="search-bar"/>
-                    <i class="fa fa-times-circle" onClick={() => this.clearSearch()}></i>
-                    {/* <div>Search Icon</div>  */}
+                    <i className="fa fa-times-circle" onClick={() => this.clearSearch()}></i>
                 </div>
                 <div className="container">
-                    {articles}
+                    {this.state.loading ? <div id="center-loader"><div className="spinner"><div className="double-bounce1"></div><div className="double-bounce2"></div></div></div> : articles}
                 </div>
             </Fragment>
         )
