@@ -198,7 +198,10 @@ export default class ChannelNews extends Component {
             return {title: article.title, description: article.description };
         })
 
-        this.setState({loading: false, articles: articles});
+        this.setState({
+            loading: false,
+            articles: articles
+        });
 
     }
 

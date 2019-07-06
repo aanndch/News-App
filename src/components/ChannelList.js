@@ -8,7 +8,7 @@ export default class ChannelList extends Component {
         super();
         this.state = {
             loading: true,
-            // search: '',
+            search: '',
             channels: null
         };
     }
@@ -56,19 +56,33 @@ export default class ChannelList extends Component {
         const channels = data.sources.map(source => {
             return {name: source.name, id: source.id, description: source.description};
         })
+
+        console.log(channels);
+
         this.setState({
             loading: false,
             channels: channels
         });
     }
 
+    handleSearch = (event) => {
+        this.setState({ search: event.target.value});
+    }
+
     render() {
+
+        
 
         let channelList;
         if (this.state.loading) {
             channelList = <div>Loading GIF</div>;
         } else {
-            channelList = this.state.channels.map(item => {
+            let channels = [];
+            channels = this.state.channels.filter(channel => {
+            return channel.name.toLowerCase().includes(this.state.search.toLowerCase());
+            })
+
+            channelList = channels.map(item => {
                 return (<Link to={`/news/${item.id}`} key={item.id}>
                             <li className="channel">
                                 <div className="channel-top">
@@ -84,10 +98,9 @@ export default class ChannelList extends Component {
         return (
             <Fragment>
                 <div id="heading">Daily News</div>
-                {/* <div>
-                    <input type='text' name='channelSearch' placeholder='Times Now' maxLength='30'></input>
-                    <div>Search Icon</div> 
-                </div> */}
+                <div id="article-search">
+                    <input type='text' name='articleSearch' onChange={this.handleSearch} placeholder="Search" maxLength='30' id="channel-search-bar"/>
+                </div>
                 <ul id="channel-list">
                     {channelList}
                 </ul>
