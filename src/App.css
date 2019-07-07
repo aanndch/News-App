@@ -172,20 +172,44 @@ body {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+	#channel-search {
+		width: 80%;
+	}
+
+	#channel-list {
+		width: 85%;
+	}
+
   .contentContainer {
     position: relative;
     margin: 50px auto;
     column-count: 2;
     column-gap: 50px;
-  }
+	}
+	
+	#article-search {
+		width: 80%;
+	}
 }
 
 @media (max-width: 767px) {
+	#channel-search {
+		width: 80%;
+	}
+
+	#channel-list {
+		width: 85%;
+	}
+
   .contentContainer {
     position: relative;
     margin: 50px auto;
     column-count: 1;
-  }
+	}
+	
+	#article-search {
+		width: 90%;
+	}
 }
 
 /* Loading spinner */
