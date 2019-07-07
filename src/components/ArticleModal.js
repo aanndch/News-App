@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
+import { string, func } from "prop-types";
 
 const openUrl = url => {
   window.location = url;
@@ -21,5 +22,19 @@ const ArticleModal = props => (
     </Modal.Footer>
   </Modal>
 );
+
+ArticleModal.propTypes = {
+  title: string.isRequired,
+  content: string.isRequired,
+  url: string.isRequired,
+  handleHide: func.isRequired
+};
+
+ArticleModal.defaultProps = {
+    title: 'Article Title',
+    content: 'Article Content',
+    url: 'Article URL',
+    handleHide: () => {}
+}
 
 export default ArticleModal;

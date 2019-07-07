@@ -1,10 +1,25 @@
 import React, { Component, Fragment } from "react";
 import ArticleModal from "./ArticleModal";
+import { string } from "prop-types";
 
 export default class ArticleCard extends Component {
   state = {
     show: false
   };
+
+  static propTypes = {
+    title: string.isRequired,
+    desc: string.isRequired,
+    url: string,
+    content: string.isRequired
+  };
+
+  static defaultProps = {
+    title: 'Article Title',
+    desc: 'Article Description',
+    url: 'Article URL',
+    content: 'Article Content'
+  }
 
   redirect = url => {
     window.location = url;
