@@ -2,14 +2,11 @@ import React, { Component, Fragment } from "react";
 import ArticleCard from "./ArticleCard";
 
 export default class ChannelNews extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loading: true,
-      search: "",
-      articles: []
-    };
-  }
+  state = {
+    loading: true,
+    search: "",
+    articles: []
+  };
 
   async componentDidMount() {
     // const id = this.props.match.params.id;

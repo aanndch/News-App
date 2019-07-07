@@ -3,14 +3,11 @@ import { Link } from "react-router-dom";
 import "font-awesome/css/font-awesome.min.css";
 
 export default class ChannelList extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loading: true,
-      search: "",
-      channels: null
-    };
-  }
+  state = {
+    loading: true,
+    search: "",
+    channels: null
+  };
 
   async componentDidMount() {
     // const apiKey = "297b81fe0c1b415f975e7b79dc820556";
@@ -116,7 +113,10 @@ export default class ChannelList extends Component {
             maxLength="30"
             id="channel-search-bar"
           />
-          <i className="fa fa-times-circle" onClick={() => this.clearSearch()} />
+          <i
+            className="fa fa-times-circle"
+            onClick={() => this.clearSearch()}
+          />
         </div>
         <ul id="channel-list">
           {this.state.loading ? (

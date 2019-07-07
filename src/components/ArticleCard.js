@@ -2,13 +2,9 @@ import React, { Component, Fragment } from "react";
 import ArticleModal from "./ArticleModal";
 
 export default class ArticleCard extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      show: false
-    };
-  }
+  state = {
+    show: false
+  };
 
   redirect = url => {
     window.location = url;
