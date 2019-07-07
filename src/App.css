@@ -179,8 +179,13 @@ body {
   padding: 25px;
 }
 
+.modal-header {
+  font-size: 30px;
+}
+
 .modal-body {
-	text-align: justify;
+  font-size: 20px;
+  text-align: justify;
 }
 
 .close {
@@ -445,7 +450,7 @@ button.learn-more:hover {
 
   .modal-dialog {
     margin: 10% auto;
-    height: 650px;
+    height: 800px;
     max-width: 90%;
     display: flex;
   }
