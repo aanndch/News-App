@@ -179,6 +179,8 @@ body {
   }
 }
 
+/* Loading spinner */
+
 .spinner {
   width: 40px;
   height: 40px;
@@ -240,6 +242,8 @@ body {
   }
 }
 
+/* Read more button */
+
 .button-center {
   margin-top: 20px;
   display: flex;
@@ -282,9 +286,13 @@ button.learn-more:hover {
   letter-spacing: 0.125rem;
 }
 
+/* Main article button */
+
 #redirect-url-button {
   background-color: #000b29;
 }
+
+/* Footer */
 
 #universal-footer {
 	margin-bottom: 10px;
