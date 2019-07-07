@@ -185,124 +185,6 @@ body {
   top: -25px;
 }
 
-@media (min-width: 1025px) and (max-width: 1280px) {
-  .contentContainer {
-    margin: 50px auto;
-    column-count: 3;
-    column-gap: 50px;
-  }
-
-  .modal-dialog {
-    margin: 10% auto;
-    height: 350px;
-    max-width: 60%;
-    display: flex;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  #channel-search {
-    width: 80%;
-  }
-
-  #channel-list {
-    width: 85%;
-  }
-
-  .contentContainer {
-    position: relative;
-    margin: 50px auto;
-    column-count: 2;
-    column-gap: 50px;
-  }
-
-  #article-search {
-    width: 80%;
-  }
-
-  .modal-dialog {
-    margin: 10% auto;
-    height: 500px;
-    max-width: 60%;
-    display: flex;
-  }
-}
-
-@media (min-width: 321px) and (max-width: 767px) {
-  #channel-search {
-    width: 80%;
-  }
-
-  #channel-list {
-    width: 85%;
-  }
-
-  .contentContainer {
-    position: relative;
-    margin: 50px auto;
-    column-count: 1;
-  }
-
-  #article-search {
-    width: 90%;
-  }
-
-  .modal-dialog {
-    margin: 10% auto;
-    height: 650px;
-    max-width: 90%;
-    display: flex;
-  }
-
-  .modal-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-@media (max-width: 320px) {
-  #channel-search {
-    width: 80%;
-  }
-
-  #channel-list {
-    width: 85%;
-  }
-
-  .contentContainer {
-    position: relative;
-    margin: 50px auto;
-    column-count: 1;
-  }
-
-  #article-search {
-    width: 90%;
-  }
-
-  .modal-dialog {
-    margin: 10% auto;
-    height: 650px;
-    max-width: 90%;
-    display: flex;
-  }
-
-  .modal-content {
-    padding: 20px;
-  }
-
-  .modal-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  #redirect-url-button {
-    margin: 10px;
-  }
-}
-
 /* Loading spinner */
 
 .spinner {
@@ -419,9 +301,177 @@ button.learn-more:hover {
 /* Footer */
 
 #universal-footer {
-  margin-bottom: 10px;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
   font-size: 20px;
+  padding: 10px 0;
   text-align: center;
-  color: var(--black);
+  background-color: var(--black);
+  color: var(--white);
+}
+
+#footer-left {
+  margin-left: 50px;
+}
+
+#github-handle {
+  margin-left: 5px;
+  color: var(--white);
+}
+
+#footer-right {
+  margin-right: 50px;
+}
+
+#api-link {
+  margin-left: 5px;
+  color: var(--white);
+}
+
+/* Responsive CSS */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .contentContainer {
+    margin: 50px auto;
+    column-count: 3;
+    column-gap: 50px;
+  }
+
+  .modal-dialog {
+    margin: 10% auto;
+    height: 350px;
+    max-width: 60%;
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #channel-search {
+    width: 80%;
+  }
+
+  #channel-list {
+    width: 85%;
+  }
+
+  .contentContainer {
+    position: relative;
+    margin: 50px auto;
+    column-count: 2;
+    column-gap: 50px;
+  }
+
+  #article-search {
+    width: 80%;
+  }
+
+  .modal-dialog {
+    margin: 10% auto;
+    height: 500px;
+    max-width: 60%;
+    display: flex;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 767px) {
+  #channel-search {
+    width: 80%;
+  }
+
+  #channel-list {
+    width: 85%;
+  }
+
+  .contentContainer {
+    position: relative;
+    margin: 50px auto;
+    column-count: 1;
+  }
+
+  #article-search {
+    width: 90%;
+  }
+
+  .modal-dialog {
+    margin: 10% auto;
+    height: 650px;
+    max-width: 90%;
+    display: flex;
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	}
+	
+	#universal-footer {
+		flex-direction: column;
+	}
+
+	#footer-left {
+		margin: 0;
+	}
+
+	#footer-right {
+		margin: 0;
+		margin-top: 10px;
+	}
+	
+}
+
+@media (max-width: 320px) {
+  #channel-search {
+    width: 80%;
+  }
+
+  #channel-list {
+    width: 85%;
+  }
+
+  .contentContainer {
+    position: relative;
+    margin: 50px auto;
+    column-count: 1;
+  }
+
+  #article-search {
+    width: 90%;
+  }
+
+  .modal-dialog {
+    margin: 10% auto;
+    height: 650px;
+    max-width: 90%;
+    display: flex;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #redirect-url-button {
+    margin: 10px;
+	}
+		
+	#universal-footer {
+		flex-direction: column;
+	}
+
+	#footer-left {
+		margin: 0;
+	}
+
+	#footer-right {
+		margin: 0;
+		margin-top: 10px;
+	}
 }
