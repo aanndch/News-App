@@ -76,8 +76,6 @@ export default class ChannelList extends Component {
 
     render() {
 
-        
-
         let channelList;
         if (this.state.loading) {
             channelList = <div>Loading GIF</div>;

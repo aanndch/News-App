@@ -1,37 +1,32 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-export default class ArticleModal extends Component {
-
-    openUrl = () => {
-        window.location = this.props.url;
-    }
-
-    render() {
-        return (
-            <Fragment>
-                <Modal
-                    show={true}
-                    onHide={this.props.handleHide}
-                >
-                    <Modal.Header closeButton>
-                        <Modal.Title>
-                        {this.props.title}
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        {this.props.content}
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={this.props.handleHide}>
-                        CLOSE
-                        </Button>
-                        <Button id="redirect-url-button" onClick={this.openUrl}>
-                        MAIN ARTICLE
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
-            </Fragment>
-        )
-    }
+const openUrl = (url) => {
+    window.location = url;
 }
+
+const ArticleModal = (props) => (
+    <Modal
+        show={true}
+        onHide={props.handleHide}
+    >
+        <Modal.Header closeButton>
+            <Modal.Title>
+            {props.title}
+            </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            {props.content}
+        </Modal.Body>
+        <Modal.Footer>
+            <Button variant="secondary" onClick={props.handleHide}>
+            CLOSE
+            </Button>
+            <Button id="redirect-url-button" onClick={() => openUrl(props.url)}>
+            MAIN ARTICLE
+            </Button>
+        </Modal.Footer>
+    </Modal>
+  );
+
+  export default ArticleModal;
