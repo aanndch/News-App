@@ -80,6 +80,7 @@ export default class ChannelList extends Component {
         if (this.state.loading) {
             channelList = <div>Loading GIF</div>;
         } else {
+
             let channels = [];
             channels = this.state.channels.filter(channel => {
             return channel.name.toLowerCase().includes(this.state.search.toLowerCase());
@@ -106,7 +107,16 @@ export default class ChannelList extends Component {
                     <i class="fa fa-times-circle" onClick={() => this.clearSearch()}></i>
                 </div>
                 <ul id="channel-list">
-                    {this.state.loading ? <div id="center-loader"><div className="spinner"><div className="double-bounce1"></div><div className="double-bounce2"></div></div></div> : channelList}
+                    {
+                        this.state.loading
+                            ? <div id="center-loader">
+                                <div className="spinner">
+                                    <div className="double-bounce1"></div>
+                                    <div className="double-bounce2"></div>
+                                </div>
+                              </div>
+                            : channelList
+                    }
                 </ul>
             </Fragment>
         )

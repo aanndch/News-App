@@ -26,7 +26,15 @@ export default class ArticleCard extends Component {
     render() {
         return (
             <Fragment>
-                { this.state.show ? <ArticleModal title={this.props.title} content={this.props.content} url={this.props.url} handleHide={this.handleHide} /> : null}
+                {
+                    this.state.show &&
+                        <ArticleModal
+                        title={this.props.title}
+                        content={this.props.content}
+                        url={this.props.url}
+                        handleHide={this.handleHide}
+                        />
+                }
                 <div className="article-card">
                         <div className="article-title">{this.props.title}</div>
                         <div className="article-desc">{this.props.desc}</div>

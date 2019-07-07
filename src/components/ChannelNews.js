@@ -223,7 +223,13 @@ export default class ChannelNews extends Component {
         })
 
         articles = articles.map((article, i) => {
-            return <ArticleCard title={article.title} desc={article.description} url={article.url} content={article.content} key={i}/>
+            return <ArticleCard
+                    title={article.title}
+                    desc={article.description}
+                    url={article.url}
+                    content={article.content}
+                    key={i}
+                    />
         })
 
         return (
@@ -234,7 +240,11 @@ export default class ChannelNews extends Component {
                     <i className="fa fa-times-circle" onClick={() => this.clearSearch()}></i>
                 </div>
                 <div className="contentContainer">
-                    {this.state.loading ? <div id="center-loader"><div className="spinner"><div className="double-bounce1"></div><div className="double-bounce2"></div></div></div> : articles}
+                    {
+                        this.state.loading
+                            ? <div id="center-loader"><div className="spinner"><div className="double-bounce1"></div><div className="double-bounce2"></div></div></div>
+                            : articles
+                    }
                 </div>
             </Fragment>
         )
