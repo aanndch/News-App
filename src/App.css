@@ -3,7 +3,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.App {
+	display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between
 }
 
 body {
@@ -277,4 +284,12 @@ button.learn-more:hover {
 
 #redirect-url-button {
   background-color: #000b29;
+}
+
+#universal-footer {
+	margin-bottom: 10px;
+	width: 100%;
+	font-size: 20px;
+	text-align: center;
+	color: #f1f1f2;
 }

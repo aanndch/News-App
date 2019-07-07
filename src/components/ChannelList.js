@@ -62,8 +62,6 @@ export default class ChannelList extends Component {
       };
     });
 
-    console.log(channels);
-
     this.setState({
       loading: false,
       channels: channels
@@ -118,7 +116,7 @@ export default class ChannelList extends Component {
             maxLength="30"
             id="channel-search-bar"
           />
-          <i class="fa fa-times-circle" onClick={() => this.clearSearch()} />
+          <i className="fa fa-times-circle" onClick={() => this.clearSearch()} />
         </div>
         <ul id="channel-list">
           {this.state.loading ? (
