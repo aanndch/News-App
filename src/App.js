@@ -9,10 +9,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-          <Route path="/" exact component={ChannelList} />
-          <Route path="/news/:id" component={ChannelNews} />
-        </Switch>
+        <div id="content">
+          <Switch>
+            <Route path="/" exact component={ChannelList} />
+            <Route path="/news/:id" component={ChannelNews} />
+          </Switch>
+        </div>
         <Footer />
       </div>
     </Router>

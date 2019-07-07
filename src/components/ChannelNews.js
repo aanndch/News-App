@@ -253,18 +253,17 @@ export default class ChannelNews extends Component {
 
   clearSearch = () => {
     this.setState({ search: "" });
-    document.getElementById("search-bar").value = "";
+    document.getElementById("article-search-bar").value = "";
   };
 
   render() {
-    let articles = [];
-    articles = this.state.articles.filter(article => {
+    let filteredArticles = this.state.articles.filter(article => {
       return article.title
         .toLowerCase()
         .includes(this.state.search.toLowerCase());
     });
 
-    articles = articles.map((article, i) => {
+    filteredArticles = filteredArticles.map((article, i) => {
       return (
         <ArticleCard
           title={article.title}
@@ -286,7 +285,7 @@ export default class ChannelNews extends Component {
             onChange={this.handleSearch}
             placeholder="Search"
             maxLength="30"
-            id="search-bar"
+            id="article-search-bar"
           />
           <i
             className="fa fa-times-circle"
@@ -302,7 +301,7 @@ export default class ChannelNews extends Component {
               </div>
             </div>
           ) : (
-            articles
+            filteredArticles
           )}
         </div>
       </Fragment>

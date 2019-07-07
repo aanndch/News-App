@@ -75,12 +75,9 @@ export default class ChannelList extends Component {
   };
 
   render() {
-    let channelList;
-    if (this.state.loading) {
-      channelList = <div>Loading GIF</div>;
-    } else {
-      let channels = [];
-      channels = this.state.channels.filter(channel => {
+    let channelList = [];
+    if (!this.state.loading) {
+      let channels = this.state.channels.filter(channel => {
         return channel.name
           .toLowerCase()
           .includes(this.state.search.toLowerCase());
