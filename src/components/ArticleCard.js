@@ -11,7 +11,7 @@ export default class ArticleCard extends Component {
     title: string.isRequired,
     desc: string.isRequired,
     url: string,
-    content: string.isRequired
+    content: string
   };
 
   static defaultProps = {

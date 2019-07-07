@@ -25,7 +25,7 @@ const ArticleModal = props => (
 
 ArticleModal.propTypes = {
   title: string.isRequired,
-  content: string.isRequired,
+  content: string,
   url: string.isRequired,
   handleHide: func.isRequired
 };

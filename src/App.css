@@ -179,6 +179,10 @@ body {
   padding: 25px;
 }
 
+.modal-body {
+	text-align: justify;
+}
+
 .close {
   position: relative;
   left: 20px;
