@@ -404,21 +404,20 @@ button.learn-more:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-	}
-	
-	#universal-footer {
-		flex-direction: column;
-	}
+  }
 
-	#footer-left {
-		margin: 0;
-	}
+  #universal-footer {
+    flex-direction: column;
+  }
 
-	#footer-right {
-		margin: 0;
-		margin-top: 10px;
-	}
-	
+  #footer-left {
+    margin: 0;
+  }
+
+  #footer-right {
+    margin: 0;
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -460,18 +459,18 @@ button.learn-more:hover {
 
   #redirect-url-button {
     margin: 10px;
-	}
-		
-	#universal-footer {
-		flex-direction: column;
-	}
+  }
 
-	#footer-left {
-		margin: 0;
-	}
+  #universal-footer {
+    flex-direction: column;
+  }
 
-	#footer-right {
-		margin: 0;
-		margin-top: 10px;
-	}
+  #footer-left {
+    margin: 0;
+  }
+
+  #footer-right {
+    margin: 0;
+    margin-top: 10px;
+  }
 }

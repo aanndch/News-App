@@ -31,10 +31,10 @@ ArticleModal.propTypes = {
 };
 
 ArticleModal.defaultProps = {
-    title: 'Article Title',
-    content: 'Article Content',
-    url: 'Article URL',
-    handleHide: () => {}
-}
+  title: "Article Title",
+  content: "Article Content",
+  url: "Article URL",
+  handleHide: () => {}
+};
 
 export default ArticleModal;

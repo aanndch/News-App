@@ -15,11 +15,11 @@ export default class ArticleCard extends Component {
   };
 
   static defaultProps = {
-    title: 'Article Title',
-    desc: 'Article Description',
-    url: 'Article URL',
-    content: 'Article Content'
-  }
+    title: "Article Title",
+    desc: "Article Description",
+    url: "Article URL",
+    content: "Article Content"
+  };
 
   redirect = url => {
     window.location = url;
