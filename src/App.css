@@ -169,7 +169,6 @@ body {
 
 .modal-dialog {
   margin: 10% auto;
-  height: 300px;
   max-width: 60%;
   display: flex;
 }
@@ -180,6 +179,7 @@ body {
 }
 
 .modal-header {
+  border-bottom: 1px solid #d1d1d1;
   font-size: 30px;
 }
 
@@ -349,7 +349,6 @@ button.learn-more:hover {
 
   .modal-dialog {
     margin: 10% auto;
-    height: 350px;
     max-width: 60%;
     display: flex;
   }
@@ -377,7 +376,6 @@ button.learn-more:hover {
 
   .modal-dialog {
     margin: 10% auto;
-    height: 500px;
     max-width: 60%;
     display: flex;
   }
@@ -404,7 +402,6 @@ button.learn-more:hover {
 
   .modal-dialog {
     margin: 10% auto;
-    height: 650px;
     max-width: 90%;
     display: flex;
   }
@@ -450,7 +447,6 @@ button.learn-more:hover {
 
   .modal-dialog {
     margin: 10% auto;
-    height: 800px;
     max-width: 90%;
     display: flex;
   }
