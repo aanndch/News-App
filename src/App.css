@@ -164,7 +164,7 @@ body {
 }
 
 .modal {
-	padding: 0 !important;
+  padding: 0 !important;
 }
 
 .modal-dialog {
@@ -175,14 +175,14 @@ body {
 }
 
 .modal-content {
-	background-color: var(--white);
-	padding: 25px;
+  background-color: var(--white);
+  padding: 25px;
 }
 
 .close {
-	position: relative;
-	left: 20px;
-	top: -25px;
+  position: relative;
+  left: 20px;
+  top: -25px;
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
@@ -190,14 +190,14 @@ body {
     margin: 50px auto;
     column-count: 3;
     column-gap: 50px;
-	}
-	
-	.modal-dialog {
-		margin: 10% auto;
-		height: 350px;
-		max-width: 60%;
-		display: flex;
-	}
+  }
+
+  .modal-dialog {
+    margin: 10% auto;
+    height: 350px;
+    max-width: 60%;
+    display: flex;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -218,14 +218,14 @@ body {
 
   #article-search {
     width: 80%;
-	}
-	
-	.modal-dialog {
-		margin: 10% auto;
-		height: 500px;
-		max-width: 60%;
-		display: flex;
-	}
+  }
+
+  .modal-dialog {
+    margin: 10% auto;
+    height: 500px;
+    max-width: 60%;
+    display: flex;
+  }
 }
 
 @media (min-width: 321px) and (max-width: 767px) {
@@ -245,20 +245,20 @@ body {
 
   #article-search {
     width: 90%;
-	}
-	
-	.modal-dialog {
-		margin: 10% auto;
-		height: 650px;
-		max-width: 90%;
-		display: flex;
-	}
+  }
 
-	.modal-footer {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+  .modal-dialog {
+    margin: 10% auto;
+    height: 650px;
+    max-width: 90%;
+    display: flex;
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (max-width: 320px) {
@@ -278,29 +278,29 @@ body {
 
   #article-search {
     width: 90%;
-	}
-	
-	.modal-dialog {
-		margin: 10% auto;
-		height: 650px;
-		max-width: 90%;
-		display: flex;
-	}
+  }
 
-	.modal-content {
-		padding: 20px;
-	}
+  .modal-dialog {
+    margin: 10% auto;
+    height: 650px;
+    max-width: 90%;
+    display: flex;
+  }
 
-	.modal-footer {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-	}
+  .modal-content {
+    padding: 20px;
+  }
 
-	#redirect-url-button {
-		margin: 10px;
-	}
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #redirect-url-button {
+    margin: 10px;
+  }
 }
 
 /* Loading spinner */
