@@ -253,7 +253,6 @@ export default class ChannelNews extends Component {
 
   clearSearch = () => {
     this.setState({ search: "" });
-    document.getElementById("article-search-bar").value = "";
   };
 
   render() {
@@ -286,6 +285,7 @@ export default class ChannelNews extends Component {
             placeholder="Search"
             maxLength="30"
             id="article-search-bar"
+            value={this.state.search}
           />
           <i
             className="fa fa-times-circle"

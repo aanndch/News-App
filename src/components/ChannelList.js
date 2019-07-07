@@ -71,7 +71,6 @@ export default class ChannelList extends Component {
 
   clearSearch = () => {
     this.setState({ search: "" });
-    document.getElementById("channel-search-bar").value = "";
   };
 
   render() {
@@ -109,6 +108,7 @@ export default class ChannelList extends Component {
             placeholder="Search"
             maxLength="30"
             id="channel-search-bar"
+            value={this.state.search}
           />
           <i
             className="fa fa-times-circle"
